@@ -2,13 +2,13 @@
 
 This modules allows send metrics to Measures service.
 
-example:
+Example:
 
-```
-var Measures = require('measuresjs');
-var measures = new Measures('myclient', {host: 'example.com', port: 1984});
+```js
+const Measures = require('measuresjs');
+const measures = new Measures('myclient', {host: 'example.com', port: 1984});
 
-var doc = {
+const doc = {
   date: new Date().toString(),
   status: 200,
   path: '/streams'
@@ -26,20 +26,24 @@ measures.metrify('mymetric', 1, doc, function (err) {
 
 ## Install Dependencies
 
-```
-$ yarn || yarn install || npm install
+```sh
+$ yarn install
+# or use npm
+$ npm install
 ```
 
 ## Tests
 
-```
-$ yarn test || npm test
+```sh
+$ yarn test
+# or use npm
+$ npm test
 ```
 
 ## Debug
 
 This lib uses the [debug](https://www.npmjs.com/package/debug) module to log all internal errors and info. To enable this on debug needings set the DEBUG environment variable:
 
-```
+```sh
 $ DEBUG=measuresjs:*
 ```
